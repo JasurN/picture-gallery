@@ -6,8 +6,19 @@
             [goog.history.EventType :as HistoryEventType]
             [markdown.core :refer [md->html]]
             [picture-gallery.ajax :refer [load-interceptors!]]
-            [ajax.core :refer [GET POST]])
+            [ajax.core :refer [GET POST]]
+            [picture-gallery.components.registration :as reg])
   (:import goog.History))
+
+(defn user-menu []
+  (if-let [id (session/get :identity)]
+    [:ul.nav.navbar-nav.pull-xs-right
+     [:li.nav-item
+      [:a.dropdown-item.btn
+       {:on-click #(session/remove! :identity)}
+       [:i.fa.fa-user] " " id " | sign out"]]]
+    [:ul.nav.navbar-nav.pull-xs.right
+     [:li.nav-item [reg/registration-button]]]))
 
 (defn nav-link [uri title page collapsed?]
   [:li.nav-item
@@ -27,7 +38,8 @@
         [:a.navbar-brand {:href "#/"} "picture-gallery"]
         [:ul.nav.navbar-nav
          [nav-link "#/" "Home" :home collapsed?]
-         [nav-link "#/about" "About" :about collapsed?]]]])))
+         [nav-link "#/about" "About" :about collapsed?]]]
+       [user-menu]])))
 
 (defn about-page []
   [:div.container
@@ -54,8 +66,16 @@
   {:home #'home-page
    :about #'about-page})
 
+(defn modal []
+  (when-let [session-modal (session/get :modal)]
+    [session-modal]))
+
 (defn page []
-  [(pages (session/get :page))])
+  [:div
+   [modal]
+   [(pages (session/get :page))]])
+
+
 
 ;; -------------------------
 ;; Routes
@@ -78,17 +98,11 @@
               (secretary/dispatch! (.-token event))))
         (.setEnabled true)))
 
-;; -------------------------
-;; Initialize app
-(defn fetch-docs! []
-  (GET (str js/context "/docs") {:handler #(session/put! :docs %)}))
-
 (defn mount-components []
   (r/render [#'navbar] (.getElementById js/document "navbar"))
   (r/render [#'page] (.getElementById js/document "app")))
 
 (defn init! []
   (load-interceptors!)
-  (fetch-docs!)
   (hook-browser-navigation!)
   (mount-components))
