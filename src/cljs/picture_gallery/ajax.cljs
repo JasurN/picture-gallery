@@ -1,5 +1,18 @@
 (ns picture-gallery.ajax
-  (:require [ajax.core :as ajax]))
+  (:require [ajax.core :as ajax]
+            [reagent.session :as session]))
+
+(defn user-action [request]
+  (session/put! :user-event true)
+  request)
+
+(defn load-interceptors []
+  (swap! ajax/default-interceptors
+         into
+         [(ajax/to-interceptor {:name    "default headers"
+                                :request default-headers})
+          (ajax/to-interceptor {:name "user action"
+                                :request user-action})]))
 
 (defn default-headers [request]
   (-> request
@@ -7,14 +20,14 @@
       (update
         :headers
         #(merge
-          %
-          {"Accept" "application/transit+json"
-           "x-csrf-token" js/csrfToken}))))
+           %
+           {"Accept"       "application/transit+json"
+            "x-csrf-token" js/csrfToken}))))
 
 (defn load-interceptors! []
   (swap! ajax/default-interceptors
          conj
-         (ajax/to-interceptor {:name "default headers"
+         (ajax/to-interceptor {:name    "default headers"
                                :request default-headers})))
 
 

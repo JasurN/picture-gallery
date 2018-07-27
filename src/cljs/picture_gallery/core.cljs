@@ -7,7 +7,8 @@
             [markdown.core :refer [md->html]]
             [picture-gallery.ajax :refer [load-interceptors!]]
             [ajax.core :refer [GET POST]]
-            [picture-gallery.components.registration :as reg])
+            [picture-gallery.components.registration :as reg]
+            [picture-gallery.components.login :as login])
   (:import goog.History))
 
 (defn user-menu []
@@ -15,9 +16,12 @@
     [:ul.nav.navbar-nav.pull-xs-right
      [:li.nav-item
       [:a.dropdown-item.btn
-       {:on-click #(session/remove! :identity)}
+       {:on-click #(ajax/POST
+                     "/logout"
+                     {:handler (fn [] (session/remove! :identity))})}
        [:i.fa.fa-user] " " id " | sign out"]]]
     [:ul.nav.navbar-nav.pull-xs.right
+     [:li:nav-item [login/login-button]]
      [:li.nav-item [reg/registration-button]]]))
 
 (defn nav-link [uri title page collapsed?]
@@ -105,4 +109,5 @@
 (defn init! []
   (load-interceptors!)
   (hook-browser-navigation!)
+  (session/put! :identity js/identity)
   (mount-components))
