@@ -6,22 +6,22 @@
             [compojure.route :as route]
             [picture-gallery.env :refer [defaults]]
             [mount.core :as mount]
-            [picture-gallery.middleware :as middleware]))
+            [picture-gallery.middleware :as middleware]
+            [picture-gallery.routes.services :refer [service-routes restricted-service-routes]]))
 
 (mount/defstate init-app
                 :start ((or (:init defaults) identity))
-                :stop  ((or (:stop defaults) identity)))
+                :stop ((or (:stop defaults) identity)))
 
 (def app-routes
   (routes
     #'service-routes
-    (-> #'home-routes
-        (wrap-routes middleware/wrap-csrf)
-        (wrap-routes middleware/wrap-formats))
+    (wrap-routes #'restricted-service-routes middleware/wrap-auth)
+    (wrap-routes #'home-routes middleware/wrap-formats)
     (route/not-found
       (:body
         (error-page {:status 404
-                     :title "page not found"})))))
+                     :title  "page not found"})))))
 
 
 (defn app [] (middleware/wrap-base #'app-routes))
