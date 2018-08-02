@@ -1,8 +1,6 @@
 # picture-gallery
 
-generated using Luminus version "2.9.10.74"
-
-FIXME
+Picture gallery project
 
 ## Prerequisites
 
@@ -17,5 +15,4 @@ To start a web server for the application, run:
     lein run
 
 ## License
-
-Copyright © 2018 FIXME
+Free to use
