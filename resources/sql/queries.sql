@@ -38,3 +38,31 @@ AND owner = :owner
 SELECT type, data FROM files
 WHERE name = :name
 AND owner = :owner
+
+-- :name select-gallery-previews :? :*
+-- selects a thumbnail for each user gallery
+WITH summary AS (
+  SELECT f.owner,
+         f.name,
+         ROW_NUMBER() OVER(PARTITION BY f.owner
+                    ORDER BY f.name DESC) AS rk
+  FROM files f WHERE name like 'thumb\_%')
+SELECT s.*
+  FROM summary s
+WHERE s.rk = 1
+
+-- :name delete-file! :! :n
+-- deletes the file with the given name and owner
+DELETE FROM files
+WHERE name = :name
+AND owner = :owner
+
+-- :name delete-user! :! :n
+-- deletes the user account
+DELETE FROM users
+WHERE id = :id
+
+-- :name delete-user-images! :! :n
+-- deletes all the images for the specified user
+DELETE FROM files
+WHERE owner = :owner

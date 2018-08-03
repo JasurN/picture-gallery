@@ -20,6 +20,11 @@
   {:owner String
    :name String})
 
+(s/defschema Gallery
+  {:owner String
+   :name String
+   (s/optional-key :rk) s/Num})
+
 (defapi service-routes
   {:swagger {:ui "/swagger-ui"
              :spec "/swagger.json"
@@ -31,11 +36,13 @@
     :body [user UserRegistration]
     :summary "register a new user"
     (auth/register! req user))
+
   (POST "/login" req
     :header-params [authorization :- String]
     :summary "login the user and create a session"
     :return Result
     (auth/login! req authorization))
+
   (POST "/logout" []
     :summary "remove user session"
     :return Result
@@ -45,11 +52,25 @@
     :summary "display user image"
     :path-params [owner :- String name :- String]
     (gallery/get-image owner name))
+
   (GET "/list-thumbnails/:owner" []
     :path-params [owner :- String]
     :summary "list thumbnails for images in the gallery"
     :return [Gallery]
-    (gallery/list-thumbnails owner)))
+    (gallery/list-thumbnails owner))
+
+  (GET "/list-galleries" []
+    :summary "list a thumbnail for each user"
+    :return [Gallery]
+    (gallery/list-galleries))
+
+  (DELETE "/image/:thumbnail" {:keys [identity]}
+    :path-params [thumbnail :- String]
+    :summary "delete the specified file from the database"
+    :return Result
+    (gallery/delete-image!
+      identity thumbnail (clojure.string/replace thumbnail #"thumb_" ""))))
+
 
 (defapi restricted-service-routes
   {:swagger {:ui "/swagger-ui-private"
