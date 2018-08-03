@@ -563,3 +563,545 @@ notifying browser that file changed:  out/picture_gallery/core.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
 notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
 notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m64[0m  [36m            {:hander #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m64[0m  [36m            {:hander #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.816 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.491 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:17  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m13[0m  [36m            [picture-gallery.components.gallery :as g])[0m
+  [36m14[0m  [36m  (:import goog.History))[0m
+  [36m15[0m  [36m[0m
+  [36m16[0m  [36m(defn list-galleries! [][0m
+  [33m17[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m18[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m(defn user-menu [][0m
+  [36m22[0m  [36m  (if-let [id (session/get :identity)][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:17  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m13[0m  [36m            [picture-gallery.components.gallery :as g])[0m
+  [36m14[0m  [36m  (:import goog.History))[0m
+  [36m15[0m  [36m[0m
+  [36m16[0m  [36m(defn list-galleries! [][0m
+  [33m17[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m18[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m19[0m  [36m[0m
+  [36m20[0m  [36m[0m
+  [36m21[0m  [36m(defn user-menu [][0m
+  [36m22[0m  [36m  (if-let [id (session/get :identity)][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:27  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m23[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m24[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m25[0m  [36m [:li.nav-item[0m
+  [36m26[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m27[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m28[0m  [36m                 "/logout"[0m
+  [36m29[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m30[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m31[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m32[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:27  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m23[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m24[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m25[0m  [36m [:li.nav-item[0m
+  [36m26[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m27[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m28[0m  [36m                 "/logout"[0m
+  [36m29[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m30[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m31[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m32[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.966 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/picture_gallery/core.js
+Figwheel: Can't open  ("src/cljs/picture_gallery/core.cljs" 17 4) No :open-file-command supplied in the config.
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:24  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m20[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m21[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m22[0m  [36m [:li.nav-item[0m
+  [36m23[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m24[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m25[0m  [36m                 "/logout"[0m
+  [36m26[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m27[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m28[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m29[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:24  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m20[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m21[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m22[0m  [36m [:li.nav-item[0m
+  [36m23[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m24[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m25[0m  [36m                 "/logout"[0m
+  [36m26[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m27[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m28[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m29[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:54  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m50[0m  [36m         [nav-link "#/about" "About" :about collapsed?]]][0m
+  [36m51[0m  [36m       [user-menu]])))[0m
+  [36m52[0m  [36m[0m
+  [36m53[0m  [36m(defn list-galleries! [][0m
+  [33m54[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m55[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m56[0m  [36m[0m
+  [36m57[0m  [36m(defn galleries [gallery-links][0m
+  [36m58[0m  [36m  [:div.text-xs-center[0m
+  [36m59[0m  [36m   (for [row (partition-all 3 gallery-links)][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:54  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m50[0m  [36m         [nav-link "#/about" "About" :about collapsed?]]][0m
+  [36m51[0m  [36m       [user-menu]])))[0m
+  [36m52[0m  [36m[0m
+  [36m53[0m  [36m(defn list-galleries! [][0m
+  [33m54[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m55[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m56[0m  [36m[0m
+  [36m57[0m  [36m(defn galleries [gallery-links][0m
+  [36m58[0m  [36m  [:div.text-xs-center[0m
+  [36m59[0m  [36m   (for [row (partition-all 3 gallery-links)][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.535 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.502 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.215 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.171 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:63  column:4  ----[0m
+
+  [1mUse of undeclared Var ajax/GET[0m
+
+  [36m59[0m  [36m         [:a {:href (str "#/gallery/" owner)}[0m
+  [36m60[0m  [36m          [:img {:src (str js/context "/gallery/" owner "/" name)}]]])])])[0m
+  [36m61[0m  [36m[0m
+  [36m62[0m  [36m(defn list-galleries! [][0m
+  [33m63[0m  [1m  (ajax/GET "/list-galleries"[0m
+  [0m  [0m  [33m   ^--- Use of undeclared Var ajax/GET[0m
+  [36m64[0m  [36m            {:handler #(session/put! :gallery-links %)}))[0m
+  [36m65[0m  [36m[0m
+  [36m66[0m  [36m(defn about-page [][0m
+  [36m67[0m  [36m  [:div.container[0m
+  [36m68[0m  [36m   [:div.row[0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.21 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.31 seconds.[0m
+[36m----  Could not Analyze  src/cljs/picture_gallery/core.cljs  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace "ajax" [0m
+
+[36m----  Analysis Error : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 0.008 seconds.[0m
+[36m----  Could not Analyze  src/cljs/picture_gallery/core.cljs   line:1  column:1  ----[0m
+
+  [1mOnly :as alias and :refer (names) options supported in :require; offending spec: [ajax.core :as] at line 1 src/cljs/picture_gallery/core.cljs[0m
+
+  [33m1[0m  [1m(ns picture-gallery.core[0m
+  [0m [0m  [33m^--- Only :as alias and :refer (names) options supported in :require; offending spec: [ajax.core :as] at line 1 src/cljs/picture_gallery/core.cljs[0m
+  [36m2[0m  [36m  (:require [reagent.core :as r][0m
+  [36m3[0m  [36m            [reagent.session :as session][0m
+  [36m4[0m  [36m            [secretary.core :as secretary :include-macros true][0m
+
+[36m----  Analysis Error : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.847 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 2.051 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.549 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.894 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.426 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.934 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/components/gallery.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 10.241 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.517 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 1.664 seconds.[0m
+[36m----  Could not Read  src/cljs/picture_gallery/core.cljs   line:37  column:22  ----[0m
+
+  [1mMap literal must contain an even number of forms[0m
+
+  [36m35[0m  [36m             "/logout"[0m
+  [36m36[0m  [36m             {:handler (fn [] (session/remove! :identity))})[0m
+  [33m37[0m  [1m          "sign out"}]]])))[0m
+  [0m  [0m  [33m                     ^--- Map literal must contain an even number of forms[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn user-menu [][0m
+  [36m40[0m  [36m  (if-let [id (session/get :identity)][0m
+
+[36m----  Reader Error : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.115 seconds.[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.616 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 1.334 seconds.[0m
+notifying browser that file changed:  out/picture_gallery/core.js
