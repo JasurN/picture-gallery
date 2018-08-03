@@ -18,10 +18,6 @@
 
 (s/defschema Gallery
   {:owner String
-   :name String})
-
-(s/defschema Gallery
-  {:owner String
    :name String
    (s/optional-key :rk) s/Num})
 
@@ -69,8 +65,10 @@
     :summary "delete the specified file from the database"
     :return Result
     (gallery/delete-image!
-      identity thumbnail (clojure.string/replace thumbnail #"thumb_" ""))))
+      identity thumbnail (clojure.string/replace thumbnail #"thumb_" "")))
 
+  (DELETE "/account" {:keys [identity]}
+    (auth/delete-account! identity)))
 
 (defapi restricted-service-routes
   {:swagger {:ui "/swagger-ui-private"
