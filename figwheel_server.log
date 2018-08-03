@@ -517,3 +517,49 @@ notifying browser that file changed:  out/picture_gallery/core.js
 [32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 0.986 seconds.[0m
 notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
 notifying browser that file changed:  out/picture_gallery/core.js
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[31mFailed to compile "target/cljsbuild/public/js/app.js" in 1.244 seconds.[0m
+[36m----  Could not Analyze  src/cljs/picture_gallery/components/gallery.cljs  ----[0m
+
+  [1mNo such namespace: clojure.sting, could not locate clojure/sting.cljs, clojure/sting.cljc, or Closure namespace "clojure.sting" [0m
+
+[36m----  Analysis Error : Please see src/cljs/picture_gallery/components/gallery.cljs  ----[0m
+[0mCompiling "target/cljsbuild/public/js/app.js" from ["src/cljc" "src/cljs" "env/dev/cljs"]...[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mNo such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- No such namespace: ajax, could not locate ajax.cljs, ajax.cljc, or Closure namespace ""[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/cljs/picture_gallery/core.cljs   line:22  column:21  ----[0m
+
+  [1mUse of undeclared Var ajax/POST[0m
+
+  [36m18[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m19[0m  [36m [:li.nav-item [u/upload-button]][0m
+  [36m20[0m  [36m [:li.nav-item[0m
+  [36m21[0m  [36m  [:a.dropdown-item.btn[0m
+  [33m22[0m  [1m   {:on-click #(ajax/POST[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var ajax/POST[0m
+  [36m23[0m  [36m                 "/logout"[0m
+  [36m24[0m  [36m                 {:handler (fn [] (session/remove! :identity))})}[0m
+  [36m25[0m  [36m   [:i.fa.fa-user] " " id " | sign out"]]][0m
+  [36m26[0m  [36m[:ul.nav.navbar-nav.pull-xs-right[0m
+  [36m27[0m  [36m [:li.nav-item [l/login-button]][0m
+
+[36m----  Compiler Warning : Please see src/cljs/picture_gallery/core.cljs  ----[0m
+[32mSuccessfully compiled "target/cljsbuild/public/js/app.js" in 5.023 seconds.[0m
+notifying browser that file changed:  target/cljsbuild/public/js/out/goog/deps.js
+notifying browser that file changed:  target/cljsbuild/public/js/out/cljs_deps.js
+notifying browser that file changed:  out/picture_gallery/components/gallery.js

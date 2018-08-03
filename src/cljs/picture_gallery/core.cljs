@@ -9,7 +9,8 @@
             [ajax.core :refer [GET POST]]
             [picture-gallery.components.registration :as reg]
             [picture-gallery.components.login :as l]
-            [picture-gallery.components.upload :as u])
+            [picture-gallery.components.upload :as u]
+            [picture-gallery.components.gallery :as g])
   (:import goog.History))
 
 (defn user-menu []
@@ -30,7 +31,7 @@
   [:li.nav-item
    {:class (when (= page (session/get :page)) "active")}
    [:a.nav-link
-    {:href uri
+    {:href     uri
      :on-click #(reset! collapsed? true)} title]])
 
 (defn navbar []
@@ -69,8 +70,9 @@
               {:__html (md->html docs)}}]]])])
 
 (def pages
-  {:home #'home-page
-   :about #'about-page})
+  {:home    #'home-page
+   :gallery #'g/gallery-page
+   :about   #'about-page})
 
 (defn modal []
   (when-let [session-modal (session/get :modal)]
@@ -88,21 +90,25 @@
 (secretary/set-config! :prefix "#")
 
 (secretary/defroute "/" []
-  (session/put! :page :home))
+                    (session/put! :page :home))
+
+(secretary/defroute "/gallery/:owner" [owner]
+                    (g/fetch-gallery-thumbs! owner)
+                    (session/put! :page :gallery))
 
 (secretary/defroute "/about" []
-  (session/put! :page :about))
+                    (session/put! :page :about))
 
 ;; -------------------------
 ;; History
 ;; must be called after routes have been defined
 (defn hook-browser-navigation! []
   (doto (History.)
-        (events/listen
-          HistoryEventType/NAVIGATE
-          (fn [event]
-              (secretary/dispatch! (.-token event))))
-        (.setEnabled true)))
+    (events/listen
+      HistoryEventType/NAVIGATE
+      (fn [event]
+        (secretary/dispatch! (.-token event))))
+    (.setEnabled true)))
 
 (defn mount-components []
   (r/render [#'navbar] (.getElementById js/document "navbar"))

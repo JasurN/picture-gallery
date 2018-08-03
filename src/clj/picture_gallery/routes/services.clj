@@ -4,6 +4,7 @@
             [ring.util.http-response :refer :all]
             [compojure.api.sweet :refer :all]
             [compojure.api.upload :refer :all]
+            [picture-gallery.routes.services.gallery :as gallery]
             [schema.core :as s]))
 
 (s/defschema UserRegistration
@@ -14,6 +15,10 @@
 (s/defschema Result
   {:result                   s/Keyword
    (s/optional-key :message) String})
+
+(s/defschema Gallery
+  {:owner String
+   :name String})
 
 (defapi service-routes
   {:swagger {:ui "/swagger-ui"
@@ -34,8 +39,17 @@
   (POST "/logout" []
     :summary "remove user session"
     :return Result
-    (auth/logout!)))
+    (auth/logout!))
 
+  (GET "/gallery/:owner/:name" []
+    :summary "display user image"
+    :path-params [owner :- String name :- String]
+    (gallery/get-image owner name))
+  (GET "/list-thumbnails/:owner" []
+    :path-params [owner :- String]
+    :summary "list thumbnails for images in the gallery"
+    :return [Gallery]
+    (gallery/list-thumbnails owner)))
 
 (defapi restricted-service-routes
   {:swagger {:ui "/swagger-ui-private"
