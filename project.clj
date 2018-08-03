@@ -54,43 +54,46 @@
   {:builds
    {:app
     {:source-paths ["src/cljc" "src/cljs" "env/dev/cljs"]
-     :figwheel true
+     :figwheel     true
      :compiler
-     {:main "picture-gallery.app"
-      :asset-path "/js/out"
-      :output-to "target/cljsbuild/public/js/app.js"
-      :output-dir "target/cljsbuild/public/js/out"
-      :optimizations :none
-      :source-map true
-      :pretty-print true}}
+                   {:main          "picture-gallery.app"
+                    :asset-path    "/js/out"
+                    :output-to     "target/cljsbuild/public/js/app.js"
+                    :output-dir    "target/cljsbuild/public/js/out"
+                    :optimizations :none
+                    :externs       ["react/externs/react.js"
+                                    "resources/externs.js"]
+                    :source-map    true
+                    :pretty-print  true}}
     :test
     {:source-paths ["src/cljc" "src/cljs" "test/cljs"]
      :compiler
-     {:output-to "target/test.js"
-      :main "picture-gallery.doo-runner"
-      :optimizations :whitespace
-      :pretty-print true}}
+                   {:output-to     "target/test.js"
+                    :main          "picture-gallery.doo-runner"
+                    :optimizations :whitespace
+                    :pretty-print  true}}
     :min
     {:source-paths ["src/cljc" "src/cljs" "env/prod/cljs"]
      :compiler
-     {:output-to "target/cljsbuild/public/js/app.js"
-      :output-dir "target/uberjar"
-      :externs ["react/externs/react.js"]
-      :optimizations :advanced
-      :pretty-print false
-      :closure-warnings
-      {:externs-validation :off :non-standard-jsdoc :off}}}}}
-  
+                   {:output-to     "target/cljsbuild/public/js/app.js"
+                    :output-dir    "target/uberjar"
+                    :externs       ["react/externs/react.js"
+                                    "resources/externs.js"]
+                    :optimizations :advanced
+                    :pretty-print  false
+                    :closure-warnings
+                                   {:externs-validation :off :non-standard-jsdoc :off}}}}}
+
   :figwheel
   {:http-server-root "public"
    :nrepl-port 7002
    :css-dirs ["resources/public/css"]
    :nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
-  
+
 
   :profiles
   {:uberjar {:omit-source true
-             
+
              :prep-tasks ["compile" ["cljsbuild" "once" "min"]]
              :aot :all
              :uberjar-name "picture-gallery.jar"
@@ -112,7 +115,7 @@
                                  [lein-doo "0.1.6"]
                                  [lein-figwheel "0.5.4-4"]
                                  [org.clojure/clojurescript "1.9.92"]]
-                  
+
                   :doo {:build "test"}
                   :source-paths ["env/dev/clj" "test/clj"]
                   :resource-paths ["env/dev/resources"]
